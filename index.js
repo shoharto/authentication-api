@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
+const cors = require("cors");
 
 //Import Routes
 
@@ -13,12 +14,14 @@ dotenv.config();
 // Connect to database
 connectDB();
 
+//Enable Cors
+app.use(cors());
 //Middleware
 
 app.use(express.json());
 
 //Route Middleware
-
+//You would need to install cors p
 app.use("/api/user", authRoute);
 app.use("/api/posts", postRoute);
 
