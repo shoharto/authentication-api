@@ -3,7 +3,7 @@ const app = express();
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const cors = require("cors");
-
+const bodyParser = require("body-parser");
 //Import Routes
 
 const authRoute = require("./routes/auth");
@@ -23,7 +23,8 @@ app.use(
 //Middleware
 
 app.use(express.json());
-
+app.use(bodyParser.json());
+//oKKindly install body-parser
 //Route Middleware
 //You would need to install cors p
 app.use("/api/user", authRoute);
