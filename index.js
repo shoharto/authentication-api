@@ -15,7 +15,11 @@ dotenv.config();
 connectDB();
 
 //Enable Cors
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 //Middleware
 
 app.use(express.json());
