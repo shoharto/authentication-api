@@ -21,8 +21,6 @@ app.use(
   })
 );
 //Middleware
-
-app.use(express.json());
 app.use(bodyParser.json());
 //oKKindly install body-parser
 //Route Middleware
